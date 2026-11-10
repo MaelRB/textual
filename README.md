@@ -30,9 +30,7 @@ applies styling through environment values, and uses SwiftUI's layout system to 
 - **Markdown support** via Foundation's `AttributedString` built-in parser
 - **Custom markup parser support** through the `MarkupParser` protocol
 - **Inline attachments** that flow with the text, such as images and custom emoji
-- **Math expressions** rendered as inline or block attachments
 - **Animated image support** (GIF, APNG, WebP)
-- **Syntax highlighting** with customizable themes
 - **Comprehensive styling** for headings, code blocks, tables, links, lists, and more
 - **Font-relative** layout measurements that scale with text size and accessibility settings
 
@@ -128,15 +126,6 @@ let emoji: Set<Emoji> = [
 InlineText(
   markdown: "Shipped the new feature :rocket: and it's working :sparkles:",
   syntaxExtensions: [.emoji(emoji)]
-)
-```
-
-Math expressions are also supported when you include `.math` in `syntaxExtensions`:
-
-```swift
-StructuredText(
-  markdown: "The area is $A = \\pi r^2$.",
-  syntaxExtensions: [.math]
 )
 ```
 
@@ -290,7 +279,7 @@ consistency across your entire document.
 ## Demos
 
 This repository includes a demo app that showcases all of Textual's features, from inline formatting and custom emoji
-to advanced styling and syntax highlighting. Each feature is demonstrated in focused, isolated examples that are easy
+to advanced styling. Each feature is demonstrated in focused, isolated examples that are easy
 to explore and reference.
 
 The demo lives in [`Examples/TextualDemo`](./Examples/TextualDemo) and is included in `Textual.xcworkspace` at the

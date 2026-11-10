@@ -5,8 +5,7 @@ import Foundation
 /// This parser leverages Foundation’s Markdown support and preserves structure via
 /// presentation intents.
 ///
-/// This parser can process its output to expand custom emoji and math expressions into
-/// inline attachments.
+/// This parser can process its output to expand custom emoji into inline attachments.
 public struct AttributedStringMarkdownParser: MarkupParser {
   private let baseURL: URL?
   private let options: AttributedString.MarkdownParsingOptions

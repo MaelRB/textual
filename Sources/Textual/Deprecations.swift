@@ -42,11 +42,9 @@ extension AttributedStringMarkdownParser {
   @available(*, deprecated, message: "Use 'SyntaxExtension' instead.")
   public struct PatternOptions: Hashable, Sendable {
     public var emoji: Set<Emoji>
-    public var mathExpressions: Bool
 
-    public init(emoji: Set<Emoji> = [], mathExpressions: Bool = false) {
+    public init(emoji: Set<Emoji> = []) {
       self.emoji = emoji
-      self.mathExpressions = mathExpressions
     }
   }
 
@@ -60,10 +58,7 @@ extension AttributedStringMarkdownParser {
     self.init(
       baseURL: baseURL,
       options: options,
-      syntaxExtensions: [
-        patternOptions.emoji.isEmpty ? nil : .emoji(patternOptions.emoji),
-        patternOptions.mathExpressions ? .math : nil,
-      ].compactMap(\.self)
+      syntaxExtensions: patternOptions.emoji.isEmpty ? [] : [.emoji(patternOptions.emoji)]
     )
   }
 }

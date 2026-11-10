@@ -1,10 +1,13 @@
 import SwiftUI
 
 extension StructuredText {
-  /// A theme used to style syntax-highlighted code blocks.
+  /// A theme used to style code blocks.
   ///
   /// A `HighlighterTheme` defines the base foreground and background colors for code blocks and
   /// an optional set of token-specific text properties.
+  ///
+  /// This fork ships no tokenizer, so code blocks render in the base colors and the
+  /// token-specific properties are not applied.
   ///
   /// You can set a highlighter theme using the ``TextualNamespace/highlighterTheme(_:)`` modifier.
   public struct HighlighterTheme: Hashable, Sendable {

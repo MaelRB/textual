@@ -144,15 +144,6 @@ extension StructuredText {
   ///   - markdown: The Markdown source to render.
   ///   - baseURL: A base URL used to resolve relative links and image URLs.
   ///   - syntaxExtensions: Custom syntax extensions applied after markdown parsing.
-  ///
-  /// Math expressions are supported when you include `.math` in `syntaxExtensions`:
-  ///
-  /// ```swift
-  /// StructuredText(
-  ///   markdown: "The area is $A = \\pi r^2$.",
-  ///   syntaxExtensions: [.math]
-  /// )
-  /// ```
   public init(
     markdown: String,
     baseURL: URL? = nil,

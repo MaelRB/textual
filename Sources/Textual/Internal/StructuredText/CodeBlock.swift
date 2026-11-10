@@ -20,11 +20,8 @@ extension StructuredText {
     var body: some View {
       let configuration = CodeBlockStyleConfiguration(
         label: .init(
-          HighlightedTextFragment(
-            content,
-            languageHint: languageHint,
-            theme: highlighterTheme
-          )
+          TextFragment(AttributedString(content))
+            .foregroundStyle(highlighterTheme.foregroundColor)
         ),
         indentationLevel: indentationLevel,
         languageHint: languageHint,

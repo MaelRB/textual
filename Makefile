@@ -55,17 +55,13 @@ format:
 		--recursive \
 		./Package.swift ./Sources ./Tests ./Examples
 
-bundle-prism:
-	@echo "Bundling Prism.js..."
-	./Scripts/bundle-prism.sh
-
 build-demo:
 	@echo "Building TextualDemo for iOS..."
 	xcodebuild build -workspace Textual.xcworkspace -scheme TextualDemo -destination platform="$(PLATFORM_IOS)" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 	@echo "Building TextualDemo for macOS..."
 	xcodebuild build -workspace Textual.xcworkspace -scheme TextualDemo -destination platform="$(PLATFORM_MACOS)" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 
-.PHONY: format test test-macos test-maccatalyst test-ios test-tvos test-watchos test-visionos bundle-prism build-demo
+.PHONY: format test test-macos test-maccatalyst test-ios test-tvos test-watchos test-visionos build-demo
 
 define udid_for
 $(shell xcrun simctl list --json devices available '$(1)' | jq -r '[.devices | to_entries | sort_by(.key) | reverse | .[].value | select(length > 0) | .[0]][0].udid // empty')

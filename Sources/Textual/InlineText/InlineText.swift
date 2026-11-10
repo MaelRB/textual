@@ -61,15 +61,6 @@ import SwiftUI
 /// )
 /// ```
 ///
-/// Math expressions are supported when you include `.math` in `syntaxExtensions`:
-///
-/// ```swift
-/// InlineText(
-///   markdown: "The area is $A = \\pi r^2$.",
-///   syntaxExtensions: [.math]
-/// )
-/// ```
-///
 /// ### Links
 ///
 /// Links use SwiftUI's `openURL` environment action. To customize link handling, override it:
